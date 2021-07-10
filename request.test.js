@@ -1,7 +1,5 @@
 const { DebounceRequest } = require('./index')
-// jest.mock('./mock.js')
 
-// const mockRequest = require('./mock')
 const mockRequest = jest.fn((res) => new Promise((resolve) => {
     setTimeout(() => {
         resolve(res)
@@ -9,11 +7,11 @@ const mockRequest = jest.fn((res) => new Promise((resolve) => {
 }))
 
 
-describe('间隔内请求',() => {
+describe('request interval',() => {
     beforeEach(() => {
         mockRequest.mockClear()
     });
-    it('参数一致-并行', async() => {
+    it('same params and parallel request', async() => {
         const request = DebounceRequest(mockRequest,1000)
         await Promise.all([
             request('haha',500),
@@ -24,7 +22,7 @@ describe('间隔内请求',() => {
         
     });
 
-    it('参数一致-串行', async() => {
+    it('same params and serial request', async() => {
         const request = DebounceRequest(mockRequest,1000)
         const a = await request('a');
         const b = await request('a')
@@ -36,7 +34,7 @@ describe('间隔内请求',() => {
         
     });
     
-    it('参数不一致', async() => {
+    it('different params', async() => {
         const request = DebounceRequest(mockRequest)
         const a = await request('a');
         const b = await request('b')
@@ -49,12 +47,12 @@ describe('间隔内请求',() => {
     });
 })
 
-describe('间隔外请求',() => {
+describe('request out interval',() => {
     beforeEach(() => {
         mockRequest.mockClear()
     });
 
-    it('参数一致-串行', async() => {
+    it('same params and serial request', async() => {
         const request = DebounceRequest(mockRequest,200)
         const a = await request('a');
         const b = await request('a')
@@ -66,7 +64,7 @@ describe('间隔外请求',() => {
         
     });
     
-    it('参数不一致', async() => {
+    it('differents params', async() => {
         const request = DebounceRequest(mockRequest,200)
         const a = await request('a');
         const b = await request('b')

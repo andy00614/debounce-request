@@ -11,7 +11,7 @@
     "duplicate requests",
     "duplicate",
     "prevent duplicate",
-    "prevent duplicate requests",
+    "prevent duplicate requests"
   ],
   "scripts": {
     "test": "jest"
