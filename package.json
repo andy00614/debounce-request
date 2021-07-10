@@ -5,6 +5,10 @@
   "main": "dist/index.js",
   "module": "src/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andy00614/debounce-request"
+  },
   "keywords": [
     "debounce",
     "request",
