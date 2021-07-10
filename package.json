@@ -1,0 +1,25 @@
+{
+  "name": "debounce-request",
+  "version": "1.0.0",
+  "description": "Prevent duplicate requests",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "debounce",
+    "request",
+    "duplicate requests",
+    "duplicate",
+    "prevent duplicate",
+    "prevent duplicate requests",
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "andy00614",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
