@@ -1,6 +1,6 @@
 {
   "name": "debounce-request",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Prevent duplicate requests",
   "main": "dist/index.js",
   "module": "src/index.js",
