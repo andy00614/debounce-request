@@ -51,10 +51,7 @@ function DebounceRequest<T, U extends unknown>(fn: Fn<T, U>,interval:number=1000
     }
 }
 
-module.exports = {
-    DebounceRequest
-}
-
+export {DebounceRequest}
 /** test-case */
 // type RequestType<T> = (res: T) => Promise<T>
 // const mockRequest:RequestType<string> = (res) => new Promise((resolve) => {
